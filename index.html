@@ -2,21 +2,24 @@
 <body>
 <h1>我叫<span id="myname"></span></h1>
     <p>我的学号是<span id="mynumber"></span>
-        <img id="logo" src="timg.jpg" style="border-radius: 10px 20px 40px 80px">
-    </p>	
-    <button id="btn">下一个  </button>
+    </p>
+    <button id="btn">下一个</button>
+    <img src="matrix.png"/>
+    <img id="logo" src="timg.jpg" style="border-radius: 20px 40px 60px 80px"/>
+
     <script src="jquery-3.4.1.js"></script>
     <script>
         $(function(){
-            $.get("./data1.json",function(result){
+            $.get("http://127.0.0.1:8585/data.json",function(result){
                 $("#myname").text(result.myname);
                 $("#mynumber").text(result.mynumber);
             });
         })
+    
         $("#btn").click(function(){
-            $.get("./data1.json",function(result){
+            $.get("http://127.0.0.1:8585/data.json",function(result){
                 $("#myname").text(result.myname);
-                $("#mynuber").text(result.mynumber);
+                $("#mynumber").text(result.mynumber);
             });
         })
     </script>
